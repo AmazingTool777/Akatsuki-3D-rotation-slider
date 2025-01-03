@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akatsuki 3D rotation slider</title>
+    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="canvas">
+      <p class="project">
+        <span>Tsuki no Me</span>
+        <span>project</span>
+      </p>
+      <div class="slider slider--hidden">
+        <h2
+          class="bottom-text bottom-text--hidden"
+          data-text="Akatsuki members"
+        >
+          Akatsuki members
+        </h2>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #008080; --member-placement: 0"
+        >
+          <img src="/imgs/deidara.png" alt="Deidara" />
+          <h3 class="member-name">Deidara</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #800080; --member-placement: 1"
+        >
+          <img src="/imgs/sasori.png" alt="Sasori" />
+          <h3 class="member-name">Sasori</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #ffa500; --member-placement: 2"
+        >
+          <img src="/imgs/kisame.png" alt="Kisame" />
+          <h3 class="member-name">Kisame</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #ff0000; --member-placement: 3"
+        >
+          <img src="/imgs/itachi.png" alt="Itachi" />
+          <h3 class="member-name">Itachi</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #7a687f; --member-placement: 4"
+        >
+          <img src="/imgs/hidan.png" alt="Hidan" />
+          <h3 class="member-name">Hidan</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #3ac3db; --member-placement: 5"
+        >
+          <img src="/imgs/kakuzu.png" alt="Kakuzu" />
+          <h3 class="member-name">Kakuzu</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #ffffff; --member-placement: 6"
+        >
+          <img src="/imgs/konan.png" alt="Konan" />
+          <h3 class="member-name">Konan</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #06339d; --member-placement: 7"
+        >
+          <img src="/imgs/pain.png" alt="Pain" />
+          <h3 class="member-name">Pain</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #ffff00; --member-placement: 8"
+        >
+          <img src="/imgs/zetsu.png" alt="Zetsu" />
+          <h3 class="member-name">Zetsu</h3>
+        </div>
+        <div
+          class="slider__card blurred"
+          style="--ring-color: #759d06; --member-placement: 9"
+        >
+          <img src="/imgs/tobi.png" alt="Tobi" />
+          <h3 class="member-name">Tobi</h3>
+        </div>
+        <img
+          src="/imgs/gedo-mazo.png"
+          alt="Gedo Mazo"
+          class="gedo-mazo gedo-mazo--hidden"
+        />
+      </div>
+    </div>
+    <dialog id="bg-music-modal" class="bg-music-modal">
+      <h2>Choose a background music</h2>
+      <form method="dialog">
+        <div class="sound-options">
+          <div class="mute-sound">
+            <input type="checkbox" id="mute-music-input" />
+            <label for="mute-music-input" class="toggleSwitch">
+              <div class="speaker">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.0"
+                  viewBox="0 0 75 75"
+                >
+                  <path
+                    d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z"
+                    style="
+                      stroke: var(--sound-icon-color);
+                      stroke-width: 5;
+                      stroke-linejoin: round;
+                      fill: var(--sound-icon-color);
+                    "
+                  ></path>
+                  <path
+                    d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6"
+                    style="
+                      fill: none;
+                      stroke: var(--sound-icon-color);
+                      stroke-width: 5;
+                      stroke-linecap: round;
+                    "
+                  ></path>
+                </svg>
+              </div>
+              <div class="mute-speaker">
+                <svg
+                  version="1.0"
+                  viewBox="0 0 75 75"
+                  stroke="var(--sound-icon-color)"
+                  stroke-width="5"
+                >
+                  <path
+                    d="m39,14-17,15H6V48H22l17,15z"
+                    fill="var(--sound-icon-color)"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="m49,26 20,24m0-24-20,24"
+                    fill="var(--sound-icon-color)"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </div>
+            </label>
+          </div>
+          <div class="volume-slider">
+            <input
+              type="range"
+              id="music-volume"
+              name="volume"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.5"
+            />
+          </div>
+        </div>
+        <div class="musics-options">
+          <div class="music-option">
+            <input
+              type="radio"
+              id="music-none"
+              name="music"
+              value="-1"
+              checked
+            />
+            <label for="music-none">No music</label>
+          </div>
+          <div class="music-option">
+            <input type="radio" id="music-0" name="music" value="0" />
+            <label for="music-0">
+              Heros Come Back - Naruto Shippuden Opening 1
+            </label>
+          </div>
+          <div class="music-option">
+            <input type="radio" id="music-1" name="music" value="1" />
+            <label for="music-1">
+              Akatsuki appearance theme - Naruto Shippuden OST
+            </label>
+          </div>
+          <div class="music-option">
+            <input type="radio" id="music-2" name="music" value="2" />
+            <label for="music-2">
+              Akatsuki ritual theme - Naruto Shippuden OST
+            </label>
+          </div>
+          <div class="music-option">
+            <input type="radio" id="music-3" name="music" value="3" />
+            <label for="music-3">
+              Pain's theme (Girei) - Naruto Shippuden OST
+            </label>
+          </div>
+          <div class="music-option">
+            <input type="radio" id="music-4" name="music" value="4" />
+            <label for="music-4">
+              Saika - Yasuharu Takanashi - Naruto Shippuden OST
+            </label>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit">OK</button>
+        </div>
+      </form>
+    </dialog>
+    <button
+      id="music-modal-toggle"
+      title="Open background music settings"
+      class="music-modal-toggle"
+    >
+      <svg
+        width="32px"
+        height="32px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20.9997 15.0241C21.0014 15.2321 20.9961 15.4612 20.979 15.703C20.913 16.6399 20.6569 17.9858 19.7103 18.9324C19.0746 19.5681 18.223 19.9579 17.3286 19.9968C16.4302 20.0358 15.5573 19.7157 14.9208 19.0792C14.2843 18.4427 13.9641 17.5697 14.0032 16.6714C14.0421 15.777 14.4319 14.9254 15.0676 14.2897C16.0142 13.3431 17.3601 13.0869 18.297 13.021C18.5481 13.0033 18.7856 12.9982 19 13.0005V9.18045L8.99999 10.8471V17L8.99971 17.0241C9.00135 17.2322 8.99605 17.4612 8.97903 17.703C8.91305 18.6399 8.65691 19.9858 7.71027 20.9324C7.07458 21.5681 6.22297 21.9579 5.32858 21.9968C4.43025 22.0358 3.5573 21.7157 2.9208 21.0792C2.28431 20.4427 1.96413 19.5697 2.00319 18.6714C2.04208 17.777 2.43187 16.9254 3.06755 16.2897C4.01419 15.3431 5.36012 15.0869 6.297 15.021C6.54813 15.0033 6.7856 14.9982 6.99999 15.0005V7.54137C6.99999 5.58601 8.41364 3.91725 10.3424 3.5958L17.5068 2.40173C19.3354 2.09696 21 3.50709 21 5.36091V15C21 15.0081 20.9999 15.0161 20.9997 15.0241ZM19 5.36091C19 4.74297 18.4451 4.27293 17.8356 4.37452L10.6712 5.56858C9.70682 5.72931 8.99999 6.56369 8.99999 7.54137V8.81953L19 7.15286V5.36091ZM6.43749 17.016C5.63783 17.0723 4.9048 17.2809 4.48177 17.7039C4.18336 18.0023 4.01746 18.3867 4.0013 18.7583C3.98532 19.1259 4.11526 19.4452 4.33502 19.665C4.55477 19.8847 4.87407 20.0147 5.24171 19.9987C5.61329 19.9825 5.99765 19.8166 6.29606 19.5182C6.71908 19.0952 6.92765 18.3622 6.98397 17.5625C6.99803 17.3629 7.00166 17.1725 6.99935 17.0006C6.82744 16.9983 6.63713 17.002 6.43749 17.016ZM16.4818 15.7039C16.9048 15.2809 17.6378 15.0723 18.4375 15.016C18.6371 15.002 18.8274 14.9983 18.9993 15.0006C19.0017 15.1725 18.998 15.3629 18.984 15.5625C18.9277 16.3622 18.7191 17.0952 18.2961 17.5182C17.9977 17.8166 17.6133 17.9825 17.2417 17.9987C16.8741 18.0147 16.5548 17.8847 16.335 17.665C16.1153 17.4452 15.9853 17.1259 16.0013 16.7583C16.0175 16.3867 16.1834 16.0023 16.4818 15.7039Z"
+          fill="#fff"
+        />
+      </svg>
+    </button>
+    <script src="main.js"></script>
+  </body>
+</html>
