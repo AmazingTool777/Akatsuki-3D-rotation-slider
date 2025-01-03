@@ -9,6 +9,10 @@ If you are a Naruto fan like me, enjoy the experience. ✨
 
 ![Screenshot](./imgs/screenshot.png)
 
+## Live webpage
+
+You can view it [here](https://amazingtool777.github.io/Akatsuki-3D-rotation-slider/)
+
 ## Inspiration
 
 On the New Year's Eve of 2025, I got bored and decided to come up with a lightweight frontend project that would teach a few new skills about HTML, CSS and Javascript.  
